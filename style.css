@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.index {
+position: relative;
+margin-top: -20 ;
+font-family: Times, 'Times New Roman', serif;
+color: #28055a;
+background: url(../kolors4kidz/indexcard.jpg)
+}
