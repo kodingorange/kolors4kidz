@@ -1,0 +1,38 @@
+.background-2 {
+    background-image: url("../kolors4kidz/22.jpeg");
+}
+
+
+.tf-container {
+    display: flex;
+    margin: 0.5rem;
+    width:100%;
+    font-size: large;
+    border: 0.1rem solid seagreen;
+    background-color: antiquewhite;
+    
+}
+
+.answer-swag {
+    padding: 2rem 4.5rem;
+    background-color: antiquewhite;
+    color:aqua
+}
+
+.choice-text {
+    padding: 3rem;
+}
+
+.button-hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.5rem gray;
+   transform: translateY(-0.2rem);
+   transition: transform 150ms;
+   
+   }
+   
+   .button-nonactive {
+       cursor: not-allowed;
+       box-shadow: none;
+       transform: none;
+   }

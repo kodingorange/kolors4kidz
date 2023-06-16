@@ -7,6 +7,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
+    text-shadow: -5px 8px 11px black;
     margin: 0;
     padding: 0;
     color:antiquewhite
@@ -23,7 +24,7 @@ h4 {
 
 h1 {
     font-size: 6rem;
-    color:blue;
+    color:rgb(132, 132, 158);
     margin-bottom: 4rem;
 }
 
@@ -37,6 +38,9 @@ h2 {
 font-size: medium;
 margin-bottom: 4rem;
 font-weight: 400;
+color: rgb(89, 0, 45);
+font-style: oblique;
+background-image: url("./22.jpeg");
 
 }
 
@@ -135,3 +139,9 @@ transition: transform 150ms;
     box-shadow: none;
     transform: none;
 }
+
+
+.background {
+    background-image: url("../kolors4kidz/k4k.jpeg") ;
+    background-size:25%;
+} 
