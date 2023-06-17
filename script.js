@@ -87,13 +87,18 @@ var question10 = {
 //Randomizing Quiz
 var quiz = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
 var randomQuiz = [];
-function randomize() { 
-    while (randomQuiz.length <= 9) {
-        var random = quiz[Math.floor(Math.random() * quiz.length)]
-        if (!randomQuiz.includes(random)) {
-            randomQuiz.push(random)
-        };
-    };
+var usedIndex= []
+function chooseRandomIndex() {
+    var randomIndex = Math.floor(Math.random() *10);
+    if (!usedIndex.includes(randomIndex)) {
+        usedIndex.push(randomIndex);
+        return(randomIndex);
+    }
+    else{
+        return(chooseRandomIndex());
+    }
+}
+for(i = 0; i < 10; i++) {
+    randomQuiz.push(quiz[chooseRandomIndex()])
 };
-randomize(randomQuiz);
 console.log(randomQuiz);
