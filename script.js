@@ -84,16 +84,6 @@ var question10 = {
     incorrectAnswer: "False",
 };
 
-//Randomizing Quiz
+//Randomizing Quiz (w/ help from Michael)
 var quiz = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
 var randomQuiz = [];
-function randomize() { 
-    while (randomQuiz.length <= 9) {
-        var random = quiz[Math.floor(Math.random() * quiz.length)]
-        if (!randomQuiz.includes(random)) {
-            randomQuiz.push(random)
-        };
-    };
-};
-randomize(randomQuiz);
-console.log(randomQuiz);
