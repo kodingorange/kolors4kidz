@@ -1,6 +1,5 @@
 :root{
     background-color: black;
-    font-size: large;
 
 }
 
@@ -45,7 +44,7 @@ background-image: url("./22.jpeg");
 }
 
 h3 {
-    font-size: small;
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -115,15 +114,16 @@ a.button:hover {
    }
 
 button {
-    font-size: 2rem;
-    padding:1rem 0;
-    width: 15rem;
+    font-size: 1rem;
+    padding:0rem 0;
+    width: 5rem;
     text-align: center;
     border: 0.1rem solid coral;
-    margin-bottom: 1rem;
+    margin-bottom: 5px;
     text-decoration: dotted;
     color: coral;
     background-color: whitesmoke;
+    margin-left: 15%;
 }
 
 button:hover {
