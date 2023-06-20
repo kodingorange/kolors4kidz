@@ -28,62 +28,62 @@ questionBonus();
 let questions = [
     {
         question: "True or False: Red, Green, and Yellow are the three primary colors?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     },
     {
         question: "True or False: White is the color you create when you add all colors together?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     },
     {
         question: "True or False: Teal, Peach, and Plum are the three secondary colors ",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "False",
     },
     {
         question: "True or False- Brown is made by mixing red, yellow, and black?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "False",
     },
     {
         question: "True or False: Brown is the color you create when you mix Red and Yellow?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "False",
     },
     {
         question: "True or False: Pink is the color you create when you mix Red and white?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     },
     {
         question: "True or False: Green is the color you create when you mix Yellow and Blue?",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     },
     {
         question: "True or False: Blue mixed with Red make green.",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "False",
     },
     {
         question: "True or False: Secondary colors are made from the three primary colors.",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     },
     {
         question: "True or False: Primary colors are colors that can be mixed together to make other colors",
-        answer1:"True",
-        answer2:"False",
+        answer1: "True",
+        answer2: "False",
         correctAnswer: "True",
     }];
 
@@ -96,10 +96,10 @@ function chooseRandomIndex() {
     var randomIndex = Math.floor(Math.random() * 10);
     if (!usedIndex.includes(randomIndex)) {
         usedIndex.push(randomIndex);
-        return(randomIndex);
+        return (randomIndex);
     }
     else {
-        return(chooseRandomIndex());
+        return (chooseRandomIndex());
     };
 };
 for (i = 0; i < 10; i++) {
@@ -131,13 +131,13 @@ function getNewQuestion() {
 
 beginQuiz();
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
     score++;
     console.log(score);
     getNewQuestion();
 });
 
-submitButton.addEventListener("click", function() {
+submitButton.addEventListener("click", function () {
     var submittedQuizzes = localStorage.getItem("answered");
     submittedQuizzes++;
     localStorage.setItem("answered", submittedQuizzes);
