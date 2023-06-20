@@ -150,3 +150,11 @@ transition: transform 150ms;
     background-size:25%;
 } 
 
+.submit{
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    margin: right;
+    margin-right: 50%;
+}
+
