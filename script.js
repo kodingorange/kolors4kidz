@@ -102,3 +102,12 @@ for (i = 0; i < 10; i++) {
     randomQuiz.push(quiz[chooseRandomIndex()]);
 };
 console.log(randomQuiz);
+
+var submitButton = document.querySelector("#submit");
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var submittedQuizzes = localStorage.getItem("completed");
+    submittedQuizzes++;
+    localStorage.setItem("completed", submittedQuizzes);
+});
