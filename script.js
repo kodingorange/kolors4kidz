@@ -13,79 +13,83 @@ fetch(giphy_url, {})
     });
 
 // Trivia API
-var questionBonus = function(){
+var questionBonus = function () {
     fetch(trivia_api, {})
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
-        })};
+        })
+};
 questionBonus();
 
 // Questions
-var question1 = {
-    question: "True or False: Red, Green, and Yellow are the three primary colors?",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
+let questions = [
+    {
+        question: "True or False: Red, Green, and Yellow are the three primary colors?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    },
+    {
+        question: "True or False: White is the color you create when you add all colors together?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    },
+    {
+        question: "True or False: Teal, Peach, and Plum are the three secondary colors ",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "False",
+    },
+    {
+        question: "True or False- Brown is made by mixing red, yellow, and black?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "False",
+    },
+    {
+        question: "True or False: Brown is the color you create when you mix Red and Yellow?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "False",
+    },
+    {
+        question: "True or False: Pink is the color you create when you mix Red and white?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    },
+    {
+        question: "True or False: Green is the color you create when you mix Yellow and Blue?",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    },
+    {
+        question: "True or False: Blue mixed with Red make green.",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "False",
+    },
+    {
+        question: "True or False: Secondary colors are made from the three primary colors.",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    },
+    {
+        question: "True or False: Primary colors are colors that can be mixed together to make other colors",
+        answer1:"True",
+        answer2:"False",
+        correctAnswer: "True",
+    }];
 
-var question2 = {
-    question: "True or False: White is the color you create when you add all colors together?",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
-
-var question3 = {
-    question: "True or False: Teal, Peach, and Plum are the three secondary colors ",
-    correctAnswer: "False",
-    incorrectAnswer: "True",
-};
-
-var question4 = {
-    question: "True or False- Brown is made by mixing red, yellow, and black?",
-    correctAnswer: "False",
-    incorrectAnswer: "True",
-};
-
-var question5 = {
-    question: "True or False: Brown is the color you create when you mix Red and Yellow?",
-    correctAnswer: "False",
-    incorrectAnswer: "True",
-};
-
-var question6 = {
-    question: "True or False: Pink is the color you create when you mix Red and white?",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
-
-var question7 = {
-    question: "True or False: Green is the color you create when you mix Yellow and Blue?",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
-
-var question8 = {
-    question: "True or False: Blue mixed with Red make green.",
-    correctAnswer: "False",
-    incorrectAnswer: "True",
-};
-
-var question9 = {
-    question: "True or False: Secondary colors are made from the three primary colors.",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
-
-var question10 = {
-    question: "True or False: Primary colors are colors that can be mixed together to make other colors",
-    correctAnswer: "True",
-    incorrectAnswer: "False",
-};
 
 //Randomizing Quiz (w/ help from Michael)
-var quiz = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
+var quiz = [...questions];
 var randomQuiz = [];
 var usedIndex = [];
 function chooseRandomIndex() {
@@ -103,11 +107,38 @@ for (i = 0; i < 10; i++) {
 };
 console.log(randomQuiz);
 
-var submitButton = document.querySelector("#submit");
+var quizQuestion = document.getElementById("question");
+var trueButton = document.getElementById("true");
+var falseButton = document.getElementById("false");
+var button = document.querySelector(".button");
+var submitButton = document.getElementById("submit");
 
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    var submittedQuizzes = localStorage.getItem("completed");
+let score = 0;
+let questionCounter = 0;
+
+function beginQuiz() {
+    questionCounter = 0;
+    score = 0;
+    getNewQuestion();
+};
+
+function getNewQuestion() {
+    quizQuestion.innerText = randomQuiz[questionCounter].question;
+    trueButton.innerText = randomQuiz[questionCounter].answer1;
+    falseButton.innerText = randomQuiz[questionCounter].answer2;
+    questionCounter++;
+};
+
+beginQuiz();
+
+button.addEventListener("click", function() {
+    score++;
+    console.log(score);
+    getNewQuestion();
+});
+
+submitButton.addEventListener("click", function() {
+    var submittedQuizzes = localStorage.getItem("answered");
     submittedQuizzes++;
-    localStorage.setItem("completed", submittedQuizzes);
+    localStorage.setItem("answered", submittedQuizzes);
 });
