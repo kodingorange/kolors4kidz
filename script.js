@@ -107,6 +107,7 @@ for (i = 0; i < 10; i++) {
 };
 console.log(randomQuiz);
 
+//Getting el
 var quizQuestion = document.getElementById("question");
 var trueButton = document.getElementById("true");
 var falseButton = document.getElementById("false");
@@ -116,8 +117,8 @@ let score = 0;
 let questionCounter = 0;
 
 function beginQuiz() {
-    questionCounter = 0;
-    score = 0;
+    let questionCounter = 0;
+    let score = 0;
     nextQuestion();
 };
 
@@ -138,7 +139,10 @@ trueButton.addEventListener("click", function () {
     };
     console.log(score);
     questionCounter++;
-    nextQuestion();
+    setTimeout(() => {
+        this.style.backgroundColor = "#fff";
+        nextQuestion();
+    }, "1500");
 });
 
 falseButton.addEventListener("click", function () {
@@ -150,7 +154,10 @@ falseButton.addEventListener("click", function () {
     };
     console.log(score);
     questionCounter++;
-    nextQuestion();
+    setTimeout(() => {
+        this.style.backgroundColor = "#fff";
+        nextQuestion();
+    }, "1500");
 });
 
 submitButton.addEventListener("click", function () {
