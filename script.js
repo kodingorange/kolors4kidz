@@ -110,7 +110,6 @@ console.log(randomQuiz);
 var quizQuestion = document.getElementById("question");
 var trueButton = document.getElementById("true");
 var falseButton = document.getElementById("false");
-var button = document.querySelector(".button");
 var submitButton = document.getElementById("submit");
 
 let score = 0;
@@ -119,22 +118,39 @@ let questionCounter = 0;
 function beginQuiz() {
     questionCounter = 0;
     score = 0;
-    getNewQuestion();
+    nextQuestion();
 };
 
-function getNewQuestion() {
+function nextQuestion() {
     quizQuestion.innerText = randomQuiz[questionCounter].question;
     trueButton.innerText = randomQuiz[questionCounter].answer1;
     falseButton.innerText = randomQuiz[questionCounter].answer2;
-    questionCounter++;
 };
 
 beginQuiz();
 
-button.addEventListener("click", function () {
-    score++;
+trueButton.addEventListener("click", function () {
+    if (randomQuiz[questionCounter].correctAnswer === "True") {
+        this.style.backgroundColor = "lightgreen";
+        score++;
+    }else {
+        this.style.backgroundColor = "red";
+    };
     console.log(score);
-    getNewQuestion();
+    questionCounter++;
+    nextQuestion();
+});
+
+falseButton.addEventListener("click", function () {
+    if (randomQuiz[questionCounter].correctAnswer === "False") {
+        this.style.backgroundColor = "lightgreen";
+        score++;
+    }else {
+        this.style.backgroundColor = "red";
+    };
+    console.log(score);
+    questionCounter++;
+    nextQuestion();
 });
 
 submitButton.addEventListener("click", function () {
