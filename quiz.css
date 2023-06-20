@@ -1,15 +1,16 @@
-:root {
+:root{
     background-color: black;
 
 }
 
-* {
+*{
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: -5px 8px 11px black;
     margin: 158;
     padding: 0;
-    color: dimgray
+    color:dimgray
+
 }
 
 .justify-center {
@@ -23,28 +24,27 @@
     justify-content: center;
     align-items: center;
     max-width: 50%;
-    margin: 0 auto;
-
+    margin:0 auto;
+   
 }
 
 
 h3 {
     padding: 6px;
-    border: 25px;
+    border: 25px ;
     margin: 25px;
     font-size: 20px;
     font-weight: 300;
-
+    color:antiquewhite
 }
 
-
-#question {
-    width: 395px;
-    height: 300px;
+.question{
+    width: 295px;
+    height: 40px;
     border: 1px solid #c3c3c3;
     display: grid;
-    flex-wrap: wrap;
     align-content: center;
+
 }
 
 
@@ -56,31 +56,12 @@ h3 {
     font-size: large;
     border: 0.1rem solid seagreen;
     background-color: rgb(41, 25, 4);
-
+    
 }
 
-.answer-swag {
-    padding: 2rem 4.5rem;
-    background-color: antiquewhite;
-    color: aqua
-}
-
-.choice-text {
-    padding: 3rem;
-}
-
-
-
-.test {
-
-    padding: 0%;
-    margin: 0%;
-    border: 0;
-
-}
 
 .submit {
-    margin: 43%;
+    margin: 0%;
     display: grid;
     flex-wrap: wrap;
     align-content: center;
