@@ -1,16 +1,15 @@
-:root{
+:root {
     background-color: black;
 
 }
 
-*{
+* {
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: -5px 8px 11px black;
     margin: 0;
     padding: 0;
-    color:antiquewhite
-    
+    color: antiquewhite
 }
 
 h1,
@@ -23,22 +22,22 @@ h4 {
 
 h1 {
     font-size: 6rem;
-    color:rgb(132, 132, 158);
+    color: rgb(132, 132, 158);
     margin-bottom: 4rem;
 }
 
-h1 > span {
+h1>span {
 
     font-size: 2.5rem;
     font-weight: 500;
 }
 
 h2 {
-font-size: medium;
-margin-bottom: 4rem;
-font-weight: 400;
-color: rgb(89, 0, 45);
-font-style: oblique;
+    font-size: medium;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    color: rgb(89, 0, 45);
+    font-style: oblique;
 
 
 }
@@ -49,22 +48,22 @@ h3 {
     font-weight: 300;
 }
 
-/*  guts */ 
+/*  guts */
 
 .container {
 
-    width:100vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 50rem;
-    margin:0 auto;
-   
+    margin: 0 auto;
+
 }
 
-.container > * {
-    width:100%;
+.container>* {
+    width: 100%;
 
 }
 
@@ -110,10 +109,10 @@ h3 {
 a.button:hover {
     cursor: pointer;
     box-shadow: 0 0.5rem 1.5rem gray;
-   transform: translateY(-0.2rem);
-   transition: transform 150ms;
-   
-   }
+    transform: translateY(-0.2rem);
+    transition: transform 150ms;
+
+}
 
 button {
     font-size: 1rem;
@@ -132,10 +131,10 @@ button {
 }
 
 button:hover {
- cursor: pointer;
- box-shadow: 0 0.5rem 1.5rem gray;
-transform: translateY(-0.2rem);
-transition: transform 150ms;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.5rem gray;
+    transform: translateY(-0.2rem);
+    transition: transform 150ms;
 
 }
 
@@ -147,15 +146,14 @@ transition: transform 150ms;
 
 
 .background {
-    background-image: url("../kolors4kidz/k4k.jpeg") ;
-    background-size:25%;
-} 
+    background-image: url("../kolors4kidz/k4k.jpeg");
+    background-size: 25%;
+}
 
-.submit{
+.submit {
     margin-top: 7%;
     display: flex;
     justify-content: center;
     margin: right;
     margin-right: 50%;
 }
-
