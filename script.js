@@ -4,13 +4,18 @@ var trivia_api = "https://the-trivia-api.com/api/question/63951fffe55fa75b149597
 
 
 // Giphy API
-fetch(giphy_url, {})
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    });
+var gif = "";
+var gifFetch = function () {
+    fetch(giphy_url, {})
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            gif.push(data);
+        });
+};
+gifFetch();
 
 // Trivia API
 var questionBonus = function () {
@@ -131,6 +136,7 @@ function nextQuestion() {
 };
 nextQuestion();
 
+//Bonus question
 function lastQuestion() {
     console.log(questionCounter);
     if (questionCounter === randomQuiz.length) {
@@ -147,7 +153,7 @@ trueButton.addEventListener("click", function () {
     if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
-    }else {
+    } else {
         this.style.backgroundColor = "red";
     };
     console.log(score);
@@ -162,7 +168,7 @@ falseButton.addEventListener("click", function () {
     if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
-    }else {
+    } else {
         this.style.backgroundColor = "red";
     };
     console.log(score);
