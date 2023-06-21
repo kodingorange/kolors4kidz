@@ -4,13 +4,19 @@ var trivia_api = "https://the-trivia-api.com/api/question/63951fffe55fa75b149597
 
 
 // Giphy API
-fetch(giphy_url, {})
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    });
+var gif;
+var gifFetch = function () {
+    fetch(giphy_url, {})
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            gif = data.data[0].url;
+            console.log(gif);
+        });
+};
+gifFetch();
 
 // Trivia API
 var questionBonus = function () {
@@ -118,6 +124,8 @@ var quizQuestion = document.getElementById("question");
 var trueButton = document.getElementById("true");
 var falseButton = document.getElementById("false");
 var submitButton = document.getElementById("submit");
+var image = document.getElementById("gif");
+
 
 //Setting score & question number
 let score = 0;
@@ -131,10 +139,14 @@ function nextQuestion() {
 };
 nextQuestion();
 
+//Bonus question
 function lastQuestion() {
     console.log(questionCounter);
     if (questionCounter === randomQuiz.length) {
         console.log("hi");
+        //var imageElement = document.createElement("img");
+        //imageElement.setAttribute("src", gif);
+        //quizQuestion.appendChild(imageElement);
     } else {
         setTimeout(() => {
             nextQuestion();
@@ -147,7 +159,7 @@ trueButton.addEventListener("click", function () {
     if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
-    }else {
+    } else {
         this.style.backgroundColor = "red";
     };
     console.log(score);
@@ -162,7 +174,7 @@ falseButton.addEventListener("click", function () {
     if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
-    }else {
+    } else {
         this.style.backgroundColor = "red";
     };
     console.log(score);
