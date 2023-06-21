@@ -4,7 +4,7 @@ var trivia_api = "https://the-trivia-api.com/api/question/63951fffe55fa75b149597
 
 
 // Giphy API
-var gif = "";
+var gif;
 var gifFetch = function () {
     fetch(giphy_url, {})
         .then(function (response) {
@@ -12,7 +12,8 @@ var gifFetch = function () {
         })
         .then(function (data) {
             console.log(data);
-            gif.push(data);
+            gif = data.data[0].url;
+            console.log(gif);
         });
 };
 gifFetch();
@@ -123,6 +124,8 @@ var quizQuestion = document.getElementById("question");
 var trueButton = document.getElementById("true");
 var falseButton = document.getElementById("false");
 var submitButton = document.getElementById("submit");
+var image = document.getElementById("gif");
+
 
 //Setting score & question number
 let score = 0;
@@ -141,6 +144,9 @@ function lastQuestion() {
     console.log(questionCounter);
     if (questionCounter === randomQuiz.length) {
         console.log("hi");
+        //var imageElement = document.createElement("img");
+        //imageElement.setAttribute("src", gif);
+        //quizQuestion.appendChild(imageElement);
     } else {
         setTimeout(() => {
             nextQuestion();
