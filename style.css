@@ -149,11 +149,3 @@ button:hover {
     background-image: url("../kolors4kidz/k4k.jpeg");
     background-size: 25%;
 }
-
-.submit {
-    margin-top: 7%;
-    display: flex;
-    justify-content: center;
-    margin: right;
-    margin-right: 50%;
-}
