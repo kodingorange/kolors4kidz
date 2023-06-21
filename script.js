@@ -20,6 +20,12 @@ var questionBonus = function () {
         })
         .then(function (data) {
             console.log(data);
+            randomQuiz.push({
+                question: data.question,
+                answer1: data.correctAnswer,
+                answer2: data.incorrectAnswers[0],
+                correctAnswer: data.correctAnswer,
+            });
         })
 };
 questionBonus();
@@ -107,31 +113,38 @@ for (i = 0; i < 10; i++) {
 };
 console.log(randomQuiz);
 
-//Getting el
+//Getting elements
 var quizQuestion = document.getElementById("question");
 var trueButton = document.getElementById("true");
 var falseButton = document.getElementById("false");
 var submitButton = document.getElementById("submit");
 
+//Setting score & question number
 let score = 0;
 let questionCounter = 0;
 
-function beginQuiz() {
-    let questionCounter = 0;
-    let score = 0;
-    nextQuestion();
-};
-
+//Sets question
 function nextQuestion() {
     quizQuestion.innerText = randomQuiz[questionCounter].question;
     trueButton.innerText = randomQuiz[questionCounter].answer1;
     falseButton.innerText = randomQuiz[questionCounter].answer2;
 };
+nextQuestion();
 
-beginQuiz();
+function lastQuestion() {
+    console.log(questionCounter);
+    if (questionCounter === randomQuiz.length) {
+        console.log("hi");
+    } else {
+        setTimeout(() => {
+            nextQuestion();
+        }, "1500");
+    }
+};
 
+//Button listeners
 trueButton.addEventListener("click", function () {
-    if (randomQuiz[questionCounter].correctAnswer === "True") {
+    if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
     }else {
@@ -139,14 +152,14 @@ trueButton.addEventListener("click", function () {
     };
     console.log(score);
     questionCounter++;
+    lastQuestion();
     setTimeout(() => {
         this.style.backgroundColor = "#fff";
-        nextQuestion();
     }, "1500");
 });
 
 falseButton.addEventListener("click", function () {
-    if (randomQuiz[questionCounter].correctAnswer === "False") {
+    if (randomQuiz[questionCounter].correctAnswer === this.textContent) {
         this.style.backgroundColor = "lightgreen";
         score++;
     }else {
@@ -154,9 +167,9 @@ falseButton.addEventListener("click", function () {
     };
     console.log(score);
     questionCounter++;
+    lastQuestion();
     setTimeout(() => {
         this.style.backgroundColor = "#fff";
-        nextQuestion();
     }, "1500");
 });
 
